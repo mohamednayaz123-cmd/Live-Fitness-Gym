@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-red: #ff3131;
+  --color-brand-orange: #ff7b00;
+  --color-brand-bg: #050505;
+  --color-brand-card: #111111;
+}
+
+body {
+  @apply bg-brand-bg text-white antialiased overflow-x-hidden selection:bg-brand-red selection:text-white font-sans;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-red to-brand-orange;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-800 rounded-full border-2 border-brand-bg;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-red;
+}
+
